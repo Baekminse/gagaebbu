@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="127dp">
+
+        <TextView
+            android:id="@+id/today1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ja"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="50dp"
+            android:text="오늘의 소비"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="156dp" />
+
+        <EditText
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="144dp"
+            android:fontFamily="@font/ja"
+            android:hint="입력하세요"
+            android:textColor="#000000"
+            android:textColorHint="#A59E9E"
+            android:textSize="25dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/today2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ja"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="225dp"
+            android:text="오늘의 수익"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="241dp" />
+        <EditText
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="220dp"
+            android:fontFamily="@font/ja"
+            android:hint="입력하세요"
+            android:textColor="#000000"
+            android:textColorHint="#A59E9E"
+            android:textSize="25dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ja"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="300dp"
+            android:text="카테고리"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="241dp" />
+<!--        <EditText-->
+<!--            android:layout_width="160dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="92dp"-->
+<!--            android:layout_marginTop="289dp"-->
+<!--            android:fontFamily="@font/ja"-->
+<!--            android:hint="입력하세요"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textColorHint="#A59E9E"-->
+<!--            android:textSize="25dp" />-->
+        <Spinner
+            android:id="@+id/category1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="289dp"
+        />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="127dp">
+
+        <Button
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
+            android:layout_marginLeft="80dp"
+            android:fontFamily="@font/ja"
+            android:text="확인"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
