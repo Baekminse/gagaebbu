@@ -1,125 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
+    android:layout_gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ja"
+            android:text="이달의 목표"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/inputmonth"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="입력하세요"
+            android:layout_marginLeft="45dp"
+            android:layout_toRightOf="@+id/month"
+            android:fontFamily="@font/ja" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="127dp">
+        android:layout_marginTop="20dp"
+        >
 
         <TextView
-            android:id="@+id/today1"
+            android:id="@+id/money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ja"
-            android:layout_marginTop="150dp"
-            android:layout_marginLeft="50dp"
-            android:text="오늘의 소비"
+            android:text=" 현재 금액 "
             android:textColor="#000000"
-            android:textSize="25sp"
-            tools:layout_editor_absoluteX="48dp"
-            tools:layout_editor_absoluteY="156dp" />
-
+            android:textSize="25sp" />
         <EditText
+            android:id="@+id/inputmoney"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="144dp"
-            android:fontFamily="@font/ja"
             android:hint="입력하세요"
-            android:textColor="#000000"
-            android:textColorHint="#A59E9E"
-            android:textSize="25dp" />
+            android:layout_marginLeft="49dp"
+            android:layout_toRightOf="@+id/month"
+            android:fontFamily="@font/ja" />
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/today2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/ja"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="225dp"
-            android:text="오늘의 수익"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            tools:layout_editor_absoluteX="48dp"
-            tools:layout_editor_absoluteY="241dp" />
-        <EditText
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="220dp"
-            android:fontFamily="@font/ja"
-            android:hint="입력하세요"
-            android:textColor="#000000"
-            android:textColorHint="#A59E9E"
-            android:textSize="25dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
         <TextView
             android:id="@+id/category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ja"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="300dp"
-            android:text="카테고리"
+            android:text=" 카테고리 "
             android:textColor="#000000"
-            android:textSize="25sp"
-            tools:layout_editor_absoluteX="48dp"
-            tools:layout_editor_absoluteY="241dp" />
-<!--        <EditText-->
-<!--            android:layout_width="160dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="92dp"-->
-<!--            android:layout_marginTop="289dp"-->
-<!--            android:fontFamily="@font/ja"-->
-<!--            android:hint="입력하세요"-->
-<!--            android:textColor="#000000"-->
-<!--            android:textColorHint="#A59E9E"-->
-<!--            android:textSize="25dp" />-->
+            android:textSize="25sp" />
         <Spinner
-            android:id="@+id/category1"
+            android:id="@+id/spinner1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginTop="289dp"
-        />
-
+            android:entries="@array/category_arr"
+            />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="127dp">
-
+        android:layout_marginTop="20dp"
+        >
         <Button
-            android:layout_width="243dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
-            android:layout_marginLeft="80dp"
-            android:fontFamily="@font/ja"
             android:text="확인"
-            android:textColor="#000000"
-            android:textSize="25sp" />
+            android:fontFamily="@font/ja"
+            android:textSize="20sp"
+            />
 
     </LinearLayout>
 
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
