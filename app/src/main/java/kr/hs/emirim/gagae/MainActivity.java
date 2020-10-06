@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,6 +49,12 @@ public class MainActivity extends AppCompatActivity {
         fa = new frag_add();
         fs = new frag_setting();
         setFrag(0); //첫 프래그먼트 어떤거로 지정할지
+
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World!");
     }
     private void setFrag(int n){
         fm = getSupportFragmentManager();
