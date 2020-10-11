@@ -21,4 +21,5 @@ public class frag_add extends Fragment {
         return view;
 
     }
+
 }
