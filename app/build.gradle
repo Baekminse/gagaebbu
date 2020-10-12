@@ -9,6 +9,7 @@ android {
     defaultConfig {
         applicationId "kr.hs.emirim.gagae"
         minSdkVersion 16
+        multiDexEnabled true
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -35,6 +36,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:20.3.0'
     implementation 'com.google.firebase:firebase-inappmessaging-display:19.1.1'
     implementation 'com.google.firebase:firebase-firestore:21.7.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
     //glide 사용을 위해 추가.
     implementation 'com.github.bumptech.glide:glide:4.10.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
