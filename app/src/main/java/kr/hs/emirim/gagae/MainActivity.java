@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("message");
 
         myRef.setValue("Hello, World!");
+
     }
     private void setFrag(int n){
         fm = getSupportFragmentManager();
