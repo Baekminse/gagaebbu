@@ -1,10 +1,10 @@
 package kr.hs.emirim.gagae;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class activity_home extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

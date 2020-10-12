@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FCEEE5"
-    tools:context=".activity_setting">
+    tools:context=".activity_setting"
+    >
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="83dp"
-        android:layout_height="89dp"
+        android:layout_height="88dp"
         android:src="@drawable/ic_baseline_account_circle_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
