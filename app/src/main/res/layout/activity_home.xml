@@ -7,9 +7,8 @@
     tools:context=".activity_home"
     >
 
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/view"
         android:layout_width="46dp"
         android:layout_height="51dp"
         android:layout_marginStart="40dp"
@@ -17,13 +16,15 @@
         android:layout_marginTop="40dp"
         android:src="@drawable/ic_baseline_account_circle_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@android:color/transparent"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="회원님"
+        android:fontFamily="@font/nanum"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,44 +34,47 @@
         app:layout_constraintVertical_bias="0.178" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/goal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="의 목표"
+        android:fontFamily="@font/nanum"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.185" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="100,000원"
+        android:fontFamily="@font/nanum"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.689"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintVertical_bias="0.235" />
 
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.809" />
+        app:layout_constraintVertical_bias="0.74" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <ImageButton
+        android:id="@+id/btn_setting"
         android:layout_width="50dp"
         android:layout_height="51dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,19 +83,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.058"
-        android:src="@drawable/ic_outline_settings_24" />
+        android:src="@drawable/ic_baseline_settings_24"
+        android:background="@android:color/transparent"/>
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageView3"
-        android:layout_width="52dp"
-        android:layout_height="47dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.978"
-        android:src="@drawable/ic_baseline_add_circle_outline_24" />
+        app:layout_constraintVertical_bias="0.976" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

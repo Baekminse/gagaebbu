@@ -17,24 +17,26 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
             android:hint="이름"
             android:textSize="30sp"
+            android:fontFamily="@font/nanum"
             />
         <EditText
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
             android:hint="이메일"
             android:textSize="30sp"
+            android:fontFamily="@font/nanum"
             />
 
         <EditText
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="30dp"
             android:hint="비밀번호"
             android:textSize="30sp"
             android:fontFamily="@font/nanum"
@@ -50,6 +52,4 @@
             />
 
     </LinearLayout>
-
-
 </LinearLayout>

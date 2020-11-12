@@ -1,14 +1,14 @@
 package kr.hs.emirim.gagae;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-public class activity_setting extends AppCompatActivity {
+import android.os.Bundle;
+
+public class activity_goal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        setContentView(R.layout.activity_goal);
     }
 }
