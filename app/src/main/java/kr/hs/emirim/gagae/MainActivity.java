@@ -6,24 +6,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_login);
 
 
-
-        ImageButton ibt2 = (ImageButton)findViewById(R.id.imageView3);
-        ibt2.setOnClickListener(new View.OnClickListener(){
-
+        final Button login = (Button)findViewById(R.id.btn_login);
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i2 = new Intent(getApplicationContext(),activity_add.class);
-                startActivity(i2);
+                Intent login = new Intent(getApplicationContext(),activity_home.class);
+                startActivity(login);
+            }
+        });
+        Button join = (Button)findViewById(R.id.btn_join);
+        join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent join = new Intent(getApplicationContext(),activity_join.class);
+                startActivity(join);
             }
         });
     }
