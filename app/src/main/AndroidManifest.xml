@@ -16,8 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity_goal"></activity>
-        <!-- <provider -->
+        <activity android:name=".activity_setting"></activity>
+        <activity android:name=".activity_goal" /> <!-- <provider -->
         <!-- android:name="androidx.core.content.FileProvider" -->
         <!-- android:authorities="kr.hs.emirim.gagae.fileProvider" -->
         <!-- android:exported="false" -->

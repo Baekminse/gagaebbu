@@ -7,17 +7,6 @@
     tools:context=".activity_home"
     >
 
-    <ImageView
-        android:id="@+id/view"
-        android:layout_width="46dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/ic_baseline_account_circle_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@android:color/transparent"/>
 
     <TextView
         android:id="@+id/username"
