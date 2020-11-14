@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/nanum"
-            android:text="확인"
+            android:text="회원가입"
             android:textSize="30sp" />
 
     </LinearLayout>

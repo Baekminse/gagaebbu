@@ -11,18 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
+
         <activity android:name=".activity_setting"></activity>
-        <activity android:name=".activity_goal" /> <!-- <provider -->
-=======
+        <activity android:name=".activity_goal" />
         <activity android:name=".activity_add" />
         <activity android:name=".activity_join" />
-        <activity android:name=".activity_login">
-        </activity>
+        <activity android:name=".activity_login"></activity>
         <activity android:name=".activity_home"></activity>
-        <activity android:name=".activity_goal"></activity>
         <!-- <provider -->
->>>>>>> gagaebbu/master
         <!-- android:name="androidx.core.content.FileProvider" -->
         <!-- android:authorities="kr.hs.emirim.gagae.fileProvider" -->
         <!-- android:exported="false" -->
@@ -34,16 +30,9 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".activity_add" />
-        <activity android:name=".activity_home"/>
-        <activity android:name=".activity_join" />
-=======
->>>>>>> gagaebbu/master
     </application>
 
 </manifest>

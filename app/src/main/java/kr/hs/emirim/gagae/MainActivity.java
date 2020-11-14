@@ -7,30 +7,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            // go to main page
+            setContentView(R.layout.activity_home);
+            startActivity(new Intent(MainActivity.this, activity_home.class));
+        } else {
+            setContentView(R.layout.activity_login);
+            startActivity(new Intent(MainActivity.this, activity_login.class));
+        }
 
-
-        final Button login = (Button)findViewById(R.id.btn_login);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent login = new Intent(getApplicationContext(),activity_home.class);
-                startActivity(login);
-            }
-        });
-        Button join = (Button)findViewById(R.id.btn_join);
-        join.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent join = new Intent(getApplicationContext(),activity_join.class);
-                startActivity(join);
-            }
-        });
     }
 
 }

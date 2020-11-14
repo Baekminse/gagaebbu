@@ -15,5 +15,7 @@ public class activity_add extends AppCompatActivity {
         setContentView(R.layout.activity_add);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
+
     }
 }
