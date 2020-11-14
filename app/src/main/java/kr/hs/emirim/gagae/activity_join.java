@@ -32,11 +32,6 @@ public class activity_join extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("계정 생성");
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
-
         join_email = (EditText) findViewById(R.id.join_email);
         join_name = (EditText) findViewById(R.id.join_name);
         join_pw = (EditText) findViewById(R.id.join_pw);

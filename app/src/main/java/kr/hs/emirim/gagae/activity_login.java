@@ -34,17 +34,11 @@ public class activity_login extends AppCompatActivity {
         login_email = findViewById(R.id.login_email);
         login_pw = findViewById(R.id.login_pw);
 
-        login_button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                //intent함수를 통해 회원가입 호출
-                startActivity(new Intent(activity_login.this, activity_join.class));
-            }
-        });
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String  email =
+                startActivity(new Intent(activity_login.this, activity_join.class));
+                finish();
             }
         });
     }
