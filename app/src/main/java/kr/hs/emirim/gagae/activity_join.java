@@ -80,7 +80,7 @@ public class activity_join extends AppCompatActivity {
         join_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    createUser(join_email.getText().toString(), join_pw.getText().toString());
+                createUser(join_email.getText().toString(), join_pw.getText().toString());
             }
         });
 
@@ -132,5 +132,4 @@ public class activity_join extends AppCompatActivity {
     }
 
 }
-
 
