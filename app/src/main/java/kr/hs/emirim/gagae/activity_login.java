@@ -1,8 +1,11 @@
 package kr.hs.emirim.gagae;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -34,6 +37,30 @@ public class activity_login extends AppCompatActivity {
         login_email = findViewById(R.id.login_email);
         login_pw = findViewById(R.id.login_pw);
         join_btn = findViewById(R.id.btn_join);
+
+        login_email.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER) {
+                    login_pw.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        login_pw.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER) {
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(login_pw.getWindowToken(), 0);
+                    login_btn.performClick();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
