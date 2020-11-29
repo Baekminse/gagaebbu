@@ -4,11 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".activity_setting">
 
-    <Button
-        android:layout_width="345dp"
-        android:layout_height="201dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="434dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".activity_setting">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanum"
+            android:text="목표 금액 설정하기"
+            android:textSize="30sp"/>
+
+        <EditText
+            android:id="@+id/st_limitmoney"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/nanum"
+            android:hint="목표 금액"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btn_fixlimit"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            android:layout_weight="1"
+            android:text="수정하기"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="log out" />
+
+            <Button
+                android:id="@+id/btn_signout"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sign out" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
