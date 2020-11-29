@@ -22,7 +22,9 @@
             android:layout_marginBottom="40dp"
             android:fontFamily="@font/nanum"
             android:hint="이름"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:privateImeOptions="defaultInputmode=korean"
+            />
 
         <EditText
             android:id="@+id/join_email"
