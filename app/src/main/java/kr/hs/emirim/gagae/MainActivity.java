@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            // User is signed in
-            // go to main page
             setContentView(R.layout.activity_home);
             startActivity(new Intent(MainActivity.this, activity_home.class));
         } else {

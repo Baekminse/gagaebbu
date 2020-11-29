@@ -119,7 +119,7 @@ public class activity_join extends AppCompatActivity {
                             finish();
                             Toast.makeText(getApplicationContext(), "회원가입 성공!", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(getApplicationContext(), "회원가입 실패, 중복된 계정입니다.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "회원가입 실패, 중복된 계정이거나 이메일 형식이 잘못 되었습니다.", Toast.LENGTH_SHORT).show();
                             return;
                         }
                     }
@@ -132,4 +132,3 @@ public class activity_join extends AppCompatActivity {
     }
 
 }
-

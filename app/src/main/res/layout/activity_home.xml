@@ -12,45 +12,55 @@
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nanum"
         android:text="회원님"
+        android:fontFamily="@font/nanum"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintVertical_bias="0.178" />
 
     <TextView
         android:id="@+id/goal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nanum"
         android:text="의 목표"
+        android:fontFamily="@font/nanum"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintVertical_bias="0.185" />
 
     <TextView
         android:id="@+id/money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nanum"
         android:text="100,000원"
+        android:fontFamily="@font/nanum"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.755"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.197" />
+        app:layout_constraintVertical_bias="0.235" />
 
-
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" />
 
     <ImageButton
         android:id="@+id/btn_setting"
@@ -78,88 +88,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
-    <!--        달력-->
-
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="325dp"
-        android:layout_height="303dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443" />
-    <!--    날짜 선택하면 그 날짜 보여주는 -->
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity= "center"
-        android:id="@+id/diaryTextView"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-
-<!--    내용 입력-->
-
-
-    <EditText
-        android:id="@+id/edit_todo"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/diaryTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:hint="내용을 입력하세요"/>
-
-    <Button
-        android:id="@+id/save_Btn"
-        android:text="저장"
-        android:layout_width="0dp"
-        android:layout_marginBottom="20dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/edit_todo"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:visibility="invisible"/>
-
-
-
-    <Button
-        android:text="수정"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/cha_Btn"
-        app:layout_constraintBaseline_toBaselineOf="@+id/save_Btn" app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/del_Btn" android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp" android:visibility="invisible"/>
-    <Button
-        android:text="삭제"
-        android:layout_width="176dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/del_Btn"
-        app:layout_constraintBaseline_toBaselineOf="@+id/cha_Btn"
-        app:layout_constraintEnd_toEndOf="@+id/save_Btn"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:visibility="invisible"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

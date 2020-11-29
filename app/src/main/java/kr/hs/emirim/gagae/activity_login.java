@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.HashMap;
+
 
 public class activity_login extends AppCompatActivity {
 
@@ -33,7 +35,6 @@ public class activity_login extends AppCompatActivity {
         login_pw = findViewById(R.id.login_pw);
         join_btn = findViewById(R.id.btn_join);
 
-
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,7 +51,7 @@ public class activity_login extends AppCompatActivity {
         });
     }
 
-    private void loginUser(String email, String password) {
+    private void loginUser(final String email, final String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -58,6 +59,7 @@ public class activity_login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // 로그인 성공
                             Toast.makeText(activity_login.this, "로그인 성공!", Toast.LENGTH_SHORT).show();
+
                             startActivity(new Intent(activity_login.this, activity_home.class));
                             finish();
                         } else {
