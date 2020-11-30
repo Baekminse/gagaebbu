@@ -14,37 +14,44 @@
         android:orientation="vertical"
         >
 
-        <EditText
-            android:id="@+id/join_name"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="40dp"
-            android:fontFamily="@font/nanum"
-            android:hint="이름"
-            android:textSize="30sp"
-            android:privateImeOptions="defaultInputmode=korean"
-            />
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="50dp"
+           android:fontFamily="@font/nanum"
+           android:hint="이름">
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/join_name"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:fontFamily="@font/nanum"/>
+       </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/join_email"
-            android:layout_width="250dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="40dp"
-            android:fontFamily="@font/nanum"
-            android:hint="이메일"
-            android:textSize="30sp" />
-
-        <EditText
-            android:id="@+id/join_pw"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginBottom="50dp"
             android:fontFamily="@font/nanum"
-            android:hint="비밀번호"
-            android:textSize="30sp" />
+            android:hint="이메일">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/join_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanum"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:fontFamily="@font/nanum"
+            android:hint="비밀번호">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/join_pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanum"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/join_ok"
