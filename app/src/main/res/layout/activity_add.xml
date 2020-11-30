@@ -14,17 +14,11 @@
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:textSize="20sp"
-            android:hint="오늘의 소비"
+            android:hint="오늘의 소비 숫자만 입력해주세요"
             android:textColor="#000000"
-            />
-        <EditText
-            android:fontFamily="@font/nanum"
-            android:layout_width="250dp"
-            android:layout_height="match_parent"
-            android:textSize="20sp"
-            android:hint="오늘의 소비"
-            android:textColor="#000000"
-            android:layout_marginTop="20dp"
+            android:id="@+id/usemoney"
+            android:inputType="number"
+            android:digits="0123456789"
             />
 
         <Button
@@ -34,6 +28,7 @@
             android:text="확인"
             android:textSize="20sp"
             android:layout_marginTop="25dp"
+            android:id="@+id/btn_commit"
             />
 
 </LinearLayout>
