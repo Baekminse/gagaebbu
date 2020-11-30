@@ -1,0 +1,272 @@
+Index: app/src/main/java/kr/hs/emirim/gagae/Users.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package kr.hs.emirim.gagae;\n\nimport android.widget.EditText;\n\nimport com.google.firebase.firestore.IgnoreExtraProperties;\nimport com.google.firebase.firestore.auth.User;\n\nimport java.util.Date;\n\n\n    @IgnoreExtraProperties\n    public class Users{\n\n        public static String username;\n        public static String email;\n        private String pw;\n        public int inmyPocket;\n        public int limitMoney;\n\n        public Users(String username, String email, String password) {\n            this.username = username;\n            this.email = email;\n            this.pw = password;\n            // Default constructor required for calls to DataSnapshot.getValue(User.class)\n        }\n\n        public Users(int inmyPocket, int limitMoney) {\n            this.inmyPocket = inmyPocket;\n            this.limitMoney = limitMoney;\n        }\n    }\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kr/hs/emirim/gagae/Users.java	(revision dd6ade0f6114e2ac59d4709d3439bcdd7b30fed5)
++++ app/src/main/java/kr/hs/emirim/gagae/Users.java	(date 1606659970000)
+@@ -16,16 +16,39 @@
+         private String pw;
+         public int inmyPocket;
+         public int limitMoney;
++        public static String uid;
+ 
+-        public Users(String username, String email, String password) {
++        public Users(String username, String email, String password, String uid, int inmyPocket, int limitMoney) {
+             this.username = username;
+             this.email = email;
+             this.pw = password;
+-            // Default constructor required for calls to DataSnapshot.getValue(User.class)
+-        }
+-
+-        public Users(int inmyPocket, int limitMoney) {
++            this.uid = uid;
+             this.inmyPocket = inmyPocket;
+             this.limitMoney = limitMoney;
++            // Default constructor required for calls to DataSnapshot.getValue(User.class)
++        }
++
++        public Users( ) {
++
++        }
++
++        public static void setUsername(String username) {
++            Users.username = username;
++        }
++
++        public static void setEmail(String email) {
++            Users.email = email;
++        }
++
++        public static void setUid(String uid) {
++            Users.uid = uid;
++        }
++
++        public String getUsername() {
++            return username;
++        }
++
++        public static String getUid() {
++            return uid;
+         }
+     }
+Index: app/src/main/res/layout/activity_home.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\".activity_home\"\n    >\n\n\n    <TextView\n        android:id=\"@+id/username\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:text=\"회원님\"\n        android:fontFamily=\"@font/nanum\"\n        android:textSize=\"30sp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.225\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:layout_constraintVertical_bias=\"0.178\" />\n\n    <TextView\n        android:id=\"@+id/goal\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:text=\"의 목표\"\n        android:fontFamily=\"@font/nanum\"\n        android:textSize=\"24sp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.498\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:layout_constraintVertical_bias=\"0.185\" />\n\n    <TextView\n        android:id=\"@+id/money\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:text=\"100,000원\"\n        android:fontFamily=\"@font/nanum\"\n        android:textSize=\"30sp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.761\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:layout_constraintVertical_bias=\"0.235\" />\n\n    <CalendarView\n        android:id=\"@+id/calendarView\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:background=\"@android:color/transparent\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.491\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:layout_constraintVertical_bias=\"0.74\" />\n\n    <ImageButton\n        android:id=\"@+id/btn_setting\"\n        android:layout_width=\"50dp\"\n        android:layout_height=\"51dp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.955\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:layout_constraintVertical_bias=\"0.058\"\n        android:src=\"@drawable/ic_baseline_settings_24\"\n        android:background=\"@android:color/transparent\"/>\n\n    <ImageButton\n        android:id=\"@+id/btn_add\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:background=\"@android:color/transparent\"\n        android:src=\"@drawable/ic_baseline_add_circle_outline_24\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.955\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:layout_constraintVertical_bias=\"0.976\" />\n\n\n\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_home.xml	(revision dd6ade0f6114e2ac59d4709d3439bcdd7b30fed5)
++++ app/src/main/res/layout/activity_home.xml	(date 1606646224000)
+@@ -12,7 +12,7 @@
+         android:id="@+id/username"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="회원님"
++        android:text="회원"
+         android:fontFamily="@font/nanum"
+         android:textSize="30sp"
+         app:layout_constraintBottom_toBottomOf="parent"
+@@ -26,7 +26,7 @@
+         android:id="@+id/goal"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="의 목표"
++        android:text="님의 목표"
+         android:fontFamily="@font/nanum"
+         android:textSize="24sp"
+         app:layout_constraintBottom_toBottomOf="parent"
+Index: app/src/main/java/kr/hs/emirim/gagae/activity_login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package kr.hs.emirim.gagae;\n\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.view.View;\nimport android.widget.Button;\nimport android.widget.EditText;\nimport android.widget.Toast;\n\nimport androidx.annotation.NonNull;\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport com.google.android.gms.tasks.OnCompleteListener;\nimport com.google.android.gms.tasks.Task;\nimport com.google.firebase.auth.AuthResult;\nimport com.google.firebase.auth.FirebaseAuth;\n\n\npublic class activity_login extends AppCompatActivity {\n\n    private Button login_btn, join_btn;\n    private EditText login_email, login_pw;\n    private FirebaseAuth mAuth;\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_login);\n        // Initialize Firebase Auth\n        mAuth = FirebaseAuth.getInstance();\n        login_btn = findViewById(R.id.login_btn);\n        login_email = findViewById(R.id.login_email);\n        login_pw = findViewById(R.id.login_pw);\n        join_btn = findViewById(R.id.btn_join);\n\n\n        login_btn.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View view) {\n                loginUser(login_email.getText().toString(), login_pw.getText().toString());\n            }\n        });\n\n        join_btn.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View view) {\n                startActivity(new Intent(activity_login.this, activity_join.class));\n                finish();\n            }\n        });\n    }\n\n    private void loginUser(String email, String password) {\n        mAuth.signInWithEmailAndPassword(email, password)\n                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {\n                    @Override\n                    public void onComplete(@NonNull Task<AuthResult> task) {\n                        if (task.isSuccessful()) {\n                            // 로그인 성공\n                            Toast.makeText(activity_login.this, \"로그인 성공!\", Toast.LENGTH_SHORT).show();\n                            startActivity(new Intent(activity_login.this, activity_home.class));\n                            finish();\n                        } else {\n                            // 로그인 실패\n                            Toast.makeText(activity_login.this, \"아이디 또는 이메일이 일치하지 않습니다.\", Toast.LENGTH_SHORT).show();\n                        }\n                    }\n                });\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kr/hs/emirim/gagae/activity_login.java	(revision dd6ade0f6114e2ac59d4709d3439bcdd7b30fed5)
++++ app/src/main/java/kr/hs/emirim/gagae/activity_login.java	(date 1606659633000)
+@@ -15,6 +15,8 @@
+ import com.google.firebase.auth.AuthResult;
+ import com.google.firebase.auth.FirebaseAuth;
+ 
++import java.util.HashMap;
++
+ 
+ public class activity_login extends AppCompatActivity {
+ 
+@@ -33,7 +35,6 @@
+         login_pw = findViewById(R.id.login_pw);
+         join_btn = findViewById(R.id.btn_join);
+ 
+-
+         login_btn.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+@@ -50,7 +51,7 @@
+         });
+     }
+ 
+-    private void loginUser(String email, String password) {
++    private void loginUser(final String email, final String password) {
+         mAuth.signInWithEmailAndPassword(email, password)
+                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                     @Override
+@@ -58,6 +59,7 @@
+                         if (task.isSuccessful()) {
+                             // 로그인 성공
+                             Toast.makeText(activity_login.this, "로그인 성공!", Toast.LENGTH_SHORT).show();
++
+                             startActivity(new Intent(activity_login.this, activity_home.class));
+                             finish();
+                         } else {
+Index: app/src/main/java/kr/hs/emirim/gagae/activity_home.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package kr.hs.emirim.gagae;\n\nimport androidx.annotation.NonNull;\nimport androidx.appcompat.app.AppCompatActivity;\n\n\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.view.View;\nimport android.widget.*;\n\nimport com.google.firebase.database.DataSnapshot;\nimport com.google.firebase.database.DatabaseError;\nimport com.google.firebase.database.DatabaseReference;\nimport com.google.firebase.database.FirebaseDatabase;\nimport com.google.firebase.database.ValueEventListener;\n\npublic class activity_home extends AppCompatActivity {\n    private DatabaseReference mDatabase;\n    private TextView limitmoney;\n    private TextView uName;\n    private ImageButton btn_add, btn_setting;\n\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        mDatabase = FirebaseDatabase.getInstance().getReference();\n        mDatabase.child(\"users\").child().addListenerForSingleValueEvent(\n                new ValueEventListener () {\n                    @Override\n                    public void onDataChange(DataSnapshot dataSnapshot) {\n                        // ...\n                    }\n\n                    @Override\n                    public void onCancelled(DatabaseError databaseError) {\n                        // Getting Post failed, log a message\n                    }\n                });\n        @Override\n        public void onDataChange(DataSnapshot dataSnapshot) {\n\n            //Inflate class with dataSnapShot\n            Users user = dataSnapshot.getValue(Users.class);\n\n            //...\n        }\n        Users user = dataSnapshot.getValue(Users.class);\n\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_home);\n\n        uName = (TextView)findViewById(R.id.username);\n        uName.setText();\n\n        limitmoney = findViewById(R.id.money);\n        uName = findViewById(R.id.username);\n        btn_setting = findViewById(R.id.btn_setting);\n        btn_add = findViewById(R.id.btn_add);\n\n        btn_add.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View view) {\n                startActivity(new Intent(activity_home.this, activity_add.class));\n            }\n        });\n\n        btn_setting.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View view) {\n                startActivity(new Intent(activity_home.this, activity_setting.class));\n            }\n        });\n\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kr/hs/emirim/gagae/activity_home.java	(revision dd6ade0f6114e2ac59d4709d3439bcdd7b30fed5)
++++ app/src/main/java/kr/hs/emirim/gagae/activity_home.java	(date 1606658136000)
+@@ -6,6 +6,7 @@
+ 
+ import android.content.Intent;
+ import android.os.Bundle;
++import android.util.Log;
+ import android.view.View;
+ import android.widget.*;
+ 
+@@ -14,50 +15,34 @@
+ import com.google.firebase.database.DatabaseReference;
+ import com.google.firebase.database.FirebaseDatabase;
+ import com.google.firebase.database.ValueEventListener;
++import com.google.firebase.firestore.auth.User;
+ 
+ public class activity_home extends AppCompatActivity {
+-    private DatabaseReference mDatabase;
+     private TextView limitmoney;
+     private TextView uName;
+     private ImageButton btn_add, btn_setting;
++    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
++    private DatabaseReference databaseReference = firebaseDatabase.getReference("Users");
+ 
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+-        mDatabase = FirebaseDatabase.getInstance().getReference();
+-        mDatabase.child("users").child().addListenerForSingleValueEvent(
+-                new ValueEventListener () {
+-                    @Override
+-                    public void onDataChange(DataSnapshot dataSnapshot) {
+-                        // ...
+-                    }
+-
+-                    @Override
+-                    public void onCancelled(DatabaseError databaseError) {
+-                        // Getting Post failed, log a message
+-                    }
+-                });
+-        @Override
+-        public void onDataChange(DataSnapshot dataSnapshot) {
+ 
+-            //Inflate class with dataSnapShot
+-            Users user = dataSnapshot.getValue(Users.class);
+-
+-            //...
+-        }
+-        Users user = dataSnapshot.getValue(Users.class);
+ 
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_home);
+ 
+-        uName = (TextView)findViewById(R.id.username);
+-        uName.setText();
+-
++
++
++        uName = (TextView) findViewById(R.id.username);
+         limitmoney = findViewById(R.id.money);
+         uName = findViewById(R.id.username);
+         btn_setting = findViewById(R.id.btn_setting);
+         btn_add = findViewById(R.id.btn_add);
+ 
++        getFirebaseDatabase();
++
++
+         btn_add.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+@@ -73,4 +58,19 @@
+         });
+ 
+     }
++
++    public void getFirebaseDatabase() {
++        databaseReference.addValueEventListener(new ValueEventListener() {
++            @Override
++            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
++                Users user = dataSnapshot.getValue(Users.class);
++                uName.setText(user.getUsername());
++            }
++
++            @Override
++            public void onCancelled(@NonNull DatabaseError error) {
++
++            }
++        });
++    }
+ }
+\ No newline at end of file
+Index: app/src/main/java/kr/hs/emirim/gagae/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package kr.hs.emirim.gagae;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.view.View;\nimport android.widget.Button;\n\nimport com.google.firebase.auth.FirebaseAuth;\nimport com.google.firebase.auth.FirebaseUser;\n\npublic class MainActivity extends AppCompatActivity {\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();\n        if (user != null) {\n            // User is signed in\n            // go to main page\n            setContentView(R.layout.activity_home);\n            startActivity(new Intent(MainActivity.this, activity_home.class));\n        } else {\n            setContentView(R.layout.activity_login);\n            startActivity(new Intent(MainActivity.this, activity_login.class));\n        }\n\n    }\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kr/hs/emirim/gagae/MainActivity.java	(revision dd6ade0f6114e2ac59d4709d3439bcdd7b30fed5)
++++ app/src/main/java/kr/hs/emirim/gagae/MainActivity.java	(date 1606659679000)
+@@ -16,16 +16,14 @@
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+-        if (user != null) {
+-            // User is signed in
+-            // go to main page
+-            setContentView(R.layout.activity_home);
+-            startActivity(new Intent(MainActivity.this, activity_home.class));
+-        } else {
++//        if (user != null) {
++//            setContentView(R.layout.activity_home);
++//            startActivity(new Intent(MainActivity.this, activity_home.class));
++//        } else {
+             setContentView(R.layout.activity_login);
+             startActivity(new Intent(MainActivity.this, activity_login.class));
+         }
+ 
+     }
+ 
+-}
+\ No newline at end of file
++//}
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>apply plugin: 'com.android.application'\napply plugin: 'com.google.gms.google-services'\n\n\nandroid {\n    compileSdkVersion 30\n    buildToolsVersion \"30.0.0\"\n\n    defaultConfig {\n        applicationId \"kr.hs.emirim.gagae\"\n        minSdkVersion 16\n        multiDexEnabled true\n        targetSdkVersion 30\n        versionCode 1\n        versionName \"1.0\"\n\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\n    }\n\n    buildTypes {\n        release {\n            minifyEnabled false\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\n        }\n    }\n}\n\ndependencies {\n    implementation fileTree(dir: \"libs\", include: [\"*.jar\"])\n    implementation 'androidx.appcompat:appcompat:1.2.0'\n    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'\n    implementation 'com.google.android.material:material:1.2.1'\n    implementation 'com.google.firebase:firebase-analytics:17.5.0'\n    implementation 'com.google.firebase:firebase-core:17.0.0'\n    implementation 'com.google.firebase:firebase-database:19.5.0'\n    implementation 'com.google.firebase:firebase-messaging:20.3.0'\n    implementation 'com.google.firebase:firebase-inappmessaging-display:19.1.1'\n    implementation 'com.google.firebase:firebase-firestore:21.7.0'\n    implementation 'androidx.multidex:multidex:2.0.1'\n    //glide 사용을 위해 추가.\n    implementation 'com.github.bumptech.glide:glide:4.10.0'\n    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'\n    //로그인 관련\n    implementation 'com.google.firebase:firebase-auth:19.4.0'\n    implementation 'com.google.android.gms:play-services-auth:18.1.0'\n    testImplementation 'junit:junit:4.12'\n    androidTestImplementation 'androidx.test.ext:junit:1.1.2'\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'\n\n}\napply plugin: 'com.google.gms.google-services'\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision dd6ade0f6114e2ac59d4709d3439bcdd7b30fed5)
++++ app/build.gradle	(date 1606656302000)
+@@ -46,6 +46,7 @@
+     testImplementation 'junit:junit:4.12'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
++    implementation 'com.google.android.gms:play-services-basement:17.4.0'
+ 
+ }
+ apply plugin: 'com.google.gms.google-services'
