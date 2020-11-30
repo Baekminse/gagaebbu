@@ -13,9 +13,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
