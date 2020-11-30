@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
+        android:padding="30dp"
         >
 
        <com.google.android.material.textfield.TextInputLayout
@@ -60,12 +61,14 @@
 
         <Button
             android:id="@+id/join_ok"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/nanum"
+            android:backgroundTint="#1F4554"
+            android:textColor="#ffffff"
             android:text="회원가입"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
     </LinearLayout>
 
