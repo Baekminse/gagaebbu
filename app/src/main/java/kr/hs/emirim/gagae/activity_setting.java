@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +26,7 @@ import java.util.Map;
 
 public class activity_setting extends AppCompatActivity {
 
-    private EditText st_limitmoney;
+    private TextInputEditText st_limitmoney;
     private Button btn_logout, btn_signout, btn_fixlimit;
     private FirebaseAuth mAuth;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();

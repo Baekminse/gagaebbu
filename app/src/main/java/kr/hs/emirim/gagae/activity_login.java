@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -24,7 +25,7 @@ import java.util.HashMap;
 public class activity_login extends AppCompatActivity {
 
     private Button login_btn, join_btn;
-    private EditText login_email, login_pw;
+    private TextInputEditText login_email, login_pw;
     private FirebaseAuth mAuth;
 
     @Override

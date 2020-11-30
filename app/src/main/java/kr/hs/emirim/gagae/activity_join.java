@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -28,7 +29,7 @@ import java.util.HashMap;
 public class activity_join extends AppCompatActivity {
     private static final String TAG = "activity_join";
     private FirebaseAuth mAuth;
-    private EditText join_email, join_name, join_pw;
+    private TextInputEditText join_email, join_name, join_pw;
     private Button join_ok;
     private String email = "";
 
@@ -37,9 +38,9 @@ public class activity_join extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
 
-        join_email = (EditText) findViewById(R.id.join_email);
-        join_name = (EditText) findViewById(R.id.join_name);
-        join_pw = (EditText) findViewById(R.id.join_pw);
+        join_email = (TextInputEditText) findViewById(R.id.join_email);
+        join_name = (TextInputEditText) findViewById(R.id.join_name);
+        join_pw = (TextInputEditText) findViewById(R.id.join_pw);
         join_ok = (Button) findViewById(R.id.join_ok);
 
         join_name.setOnKeyListener(new View.OnKeyListener() {
@@ -114,7 +115,7 @@ public class activity_join extends AppCompatActivity {
                             DatabaseReference reference = database.getReference("Users");
                             reference.child(uid).setValue(hashMap);
                             //가입이 이루어지면 가입 화면 빠져나감.
-                            Intent intent = new Intent(activity_join.this, MainActivity.class);
+                            Intent intent = new Intent(activity_join.this, activity_login.class);
                             startActivity(intent);
                             finish();
                             Toast.makeText(getApplicationContext(), "회원가입 성공!", Toast.LENGTH_SHORT).show();
