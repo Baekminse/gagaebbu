@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:gravity="center_vertical|center_horizontal"
+<LinearLayout android:gravity="center_vertical|center_horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_gravity="center"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            app:hintTextColor="#1F4554"
+            app:boxBackgroundColor="#1F4554"
             android:fontFamily="@font/nanum"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:textSize="20sp"
-            android:hint="오늘의 소비 숫자만 입력해주세요"
-            android:textColor="#000000"
-            android:id="@+id/usemoney"
-            android:inputType="number"
-            android:digits="0123456789"
-            />
+            android:padding="30dp"
+            android:hint="오늘의 소비">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/usemoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="오늘의 소비 숫자만 입력해주세요"
+                    android:fontFamily="@font/nanum"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <Button
             android:fontFamily="@font/nanum"
