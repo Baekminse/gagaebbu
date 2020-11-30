@@ -16,10 +16,11 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="15dp"
             android:fontFamily="@font/nanum"
             app:hintTextColor="#1F4554"
             app:boxBackgroundColor="#1F4554"
+            android:padding="30dp"
             android:hint="이메일">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_email"
@@ -31,15 +32,17 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="25dp"
             android:fontFamily="@font/nanum"
             app:hintTextColor="#1F4554"
             app:boxBackgroundColor="#1F4554"
+            android:padding="30dp"
             android:hint="비밀번호">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_pw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:fontFamily="@font/nanum"/>
         </com.google.android.material.textfield.TextInputLayout>
 
