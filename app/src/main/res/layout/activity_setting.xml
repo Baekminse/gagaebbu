@@ -30,6 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
             android:fontFamily="@font/nanum"
+            app:hintTextColor="#1F4554"
+            app:boxBackgroundColor="#1F4554"
             android:hint="목표금액">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/st_limitmoney"
