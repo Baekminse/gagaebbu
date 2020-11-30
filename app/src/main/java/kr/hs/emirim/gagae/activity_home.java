@@ -68,7 +68,6 @@ public class activity_home extends AppCompatActivity {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                diaryTextView.setVisibility(View.VISIBLE);
                 diaryTextView.setText(String.format("%d / %d / %d" ,year ,month+1 ,dayOfMonth));
                 String Syear = String.valueOf(year);
                 String Smonth = String.valueOf(month+1);
@@ -77,12 +76,13 @@ public class activity_home extends AppCompatActivity {
                 dReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()){
-                            String here = dataSnapshot.getValue().toString();
-                            show_money.setText(here);
-                        }else {
+
+                            if(dataSnapshot.exists() == false){
                             show_money.setText("기록된 소비가 없어요");
-                        }
+                        }else{
+                                String here = dataSnapshot.getValue().toString();
+                                show_money.setText(here);
+                            }
 
                     }
 
